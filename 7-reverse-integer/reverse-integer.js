@@ -20,7 +20,7 @@ var reverse = function(x) {
         reverseNum=-reverseNum;
     }
     let safeRange=Math.pow(2,31);
-    if(reverseNum>(safeRange-2) || reverseNum<(-safeRange)){
+    if(reverseNum>(safeRange-1) || reverseNum<(-safeRange)){
         return 0;
     }
     return reverseNum;
