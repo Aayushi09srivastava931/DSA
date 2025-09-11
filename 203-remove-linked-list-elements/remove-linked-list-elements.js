@@ -11,20 +11,23 @@
  * @return {ListNode}
  */
 var removeElements = function(head, val) {
-    let prev = null;     // previous node starts as null
-    let temp = head;     // temp starts at head
-
-    while (temp != null) {
-        if (temp.val == val) {
-            if (prev == null) {
-                head = temp.next;  // removing head node
-            } else {
-                prev.next = temp.next; // skip current node
-            }
-        } else {
-            prev = temp;  // move prev forward only if not deleted
-        }
-        temp = temp.next;  // move to next node
+    if(head==null){
+        return head
     }
-    return head;
+    while(head!=null && head.val==val){
+        head=head.next
+    }
+    let temp=head
+    let trav=temp
+    while(temp!=null){
+        if(temp.val===val){
+            trav.next=temp.next
+            temp=temp.next
+        }
+        else{
+        trav=temp
+        temp=temp.next
+        }
+    }
+    return head
 };
