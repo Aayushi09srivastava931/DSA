@@ -29,7 +29,7 @@ var removeNthFromEnd = function(head, n) {
     else{
 
     let ans=prev
-    for(let i=0;i<n-2 && ans!=null;i++){
+    for(let i=1;i<=n-2 && ans!=null;i++){
         ans=ans.next
     }
     if(ans!=null && ans.next!=null){
